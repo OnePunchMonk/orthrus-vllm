@@ -51,18 +51,10 @@ print(outputs[0].outputs[0].text)
 
 This started as two PRs directly against `vllm-project/vllm`:
 
-- **[#44792](https://github.com/vllm-project/vllm/pull/44792)** — `[Model] Add Orthrus model support (autoregressive path)`. Validated end-to-end on an A10G and an A100-80GB (including the sibling `google/diffusiongemma-26B-A4B-it` checkpoint, tested at a maintainer's suggestion), with full setup/reproduction steps posted in the PR thread.
+- **[#44792](https://github.com/vllm-project/vllm/pull/44792)** — `[Model] Add Orthrus model support (autoregressive path)`.
 - **[#53753](https://github.com/vllm-project/vllm/pull/53753)** — `[Model][Spec Decode] Orthrus diffusion-mode decoding (WIP)`, an explicit follow-up building on #44792.
 
-**#44792 was closed by maintainer `Isotr0py`, with `DarkLight1337` deferring first:**
-
-> `DarkLight1337`: *"Not sure whether this is popular enough to support tbh. I'll defer to @WoosukKwon @ywang96 and @Isotr0py"*
->
-> `Isotr0py`: *"This model only has ~1200 downloads which is likely a toy model for personal research. You can support it through OOT plugin instead of native in-tree support."*
-
-This is a **scope/adoption-policy decision, not a code-quality or correctness rejection** — neither comment raises an issue with the implementation itself. vLLM's in-tree model support has a real, structural bar: maintaining every registered architecture forever has a cost, so new architectures are filtered by external usage before they're filtered by code quality. Orthrus's ~1,200 HF downloads didn't clear that bar. `Isotr0py`'s own suggestion — the OOT plugin path — is exactly what this repository is.
-
-**#53753 was then self-closed** ~3.5 hours after #44792, since it was an explicit follow-up ("should not be merged before it") with no reason to stay open once the base PR was declined. That PR's own comment history includes real, substantive debugging work (see [`docs/DIFFUSION_MODE.md`](docs/DIFFUSION_MODE.md)) that isn't erased by the base PR's scope-based closure — it's reused here as reference code precisely because the engineering was sound even though the in-tree path wasn't viable.
+Both were closed — see the linked threads for the full discussion — and this repository packages that same work as a standard OOT plugin instead, which doesn't require vllm-project/vllm's approval to ship.
 
 ## License
 
