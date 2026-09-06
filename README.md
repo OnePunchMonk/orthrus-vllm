@@ -2,7 +2,7 @@
 
 A vLLM **out-of-tree plugin** that adds native `chiennv/Orthrus-*` checkpoint support to vLLM, with `trust_remote_code=False` — no vLLM fork, no monkeypatching, installed the same way any other vLLM model plugin is.
 
-This exists because the equivalent **in-tree** vLLM PR was closed by a maintainer for scope reasons, not correctness. See [Why this is a plugin, not a vLLM PR](#why-this-is-a-plugin-not-a-vllm-pr) below for the exact maintainer feedback and why an OOT plugin is vLLM's own documented answer to that situation.
+This exists because the equivalent in-tree vLLM PRs were closed (linked below). See [Why this is a plugin, not a vLLM PR](#why-this-is-a-plugin-not-a-vllm-pr) for the PR history and why an OOT plugin is vLLM's own documented path for this situation.
 
 ## Credit
 
